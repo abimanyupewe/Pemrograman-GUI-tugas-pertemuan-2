@@ -13,7 +13,7 @@ public class calculatorBagunDatar extends javax.swing.JFrame {
     /**
      * Creates new form calculatorBagunDatar
      */
-    double nilai1, nilai2, hasil, lingkaran, alas, tinggi, sisi;
+    double nilai1, nilai2, hasil, lingkaran, alas, tinggi, sisi, keliling, luas;
 
     public calculatorBagunDatar() {
         initComponents();
@@ -34,18 +34,16 @@ public class calculatorBagunDatar extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        txtHasilPersegipanjang = new javax.swing.JTextField();
+        txtHasilLuasPersegipanjang = new javax.swing.JTextField();
         txtInputPanjangPersegiPanjang1 = new javax.swing.JTextField();
         txtInputLebarPersegiPanjang2 = new javax.swing.JTextField();
-        btnLuasPersegiPanjang = new javax.swing.JButton();
-        btnKelilingPersegiPanjang = new javax.swing.JButton();
+        btnHitungPersegiPanjang = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        btnLuasLingkaran = new javax.swing.JButton();
-        btnKelilingLingkaran = new javax.swing.JButton();
+        btnHitungLingkaran = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
-        txtHasilLingkaran = new javax.swing.JTextField();
+        txtHasilLuasLingkaran = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         txtPhi = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
@@ -61,82 +59,73 @@ public class calculatorBagunDatar extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         txtInputSisi = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
-        btnLuasPersegi = new javax.swing.JButton();
-        btnKelilingPersegi = new javax.swing.JButton();
+        btnHitungPersegi = new javax.swing.JButton();
         jLabel21 = new javax.swing.JLabel();
-        txtHasilPersegi = new javax.swing.JTextField();
+        txtHasilLuasPersegi = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        txtHasilKelilingPersegipanjang1 = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        txtHasilKelilingLingkaran = new javax.swing.JTextField();
+        jLabel22 = new javax.swing.JLabel();
+        txtHasilKelilingPersegi = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 153, 255));
 
-        jLabel1.setFont(new java.awt.Font("Yu Gothic Medium", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Swis721 WGL4 BT", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 0, 255));
         jLabel1.setText("Calculator Bangun Datar");
 
-        jLabel2.setText("Panjang");
+        jLabel2.setText("P");
 
-        jLabel3.setText("Lebar");
+        jLabel3.setText("L");
 
+        jLabel4.setForeground(new java.awt.Color(255, 102, 51));
         jLabel4.setText("Persegi panjang");
 
-        jLabel5.setText("Pilih hitung Luas atau Keliling");
+        jLabel5.setText("Hitung Luas dan Keliling");
 
-        jLabel6.setText("Hasil");
+        jLabel6.setText("Hasil Luas");
 
-        txtHasilPersegipanjang.setForeground(new java.awt.Color(0, 0, 0));
+        txtHasilLuasPersegipanjang.setForeground(new java.awt.Color(0, 0, 0));
 
-        btnLuasPersegiPanjang.setBackground(new java.awt.Color(0, 204, 204));
-        btnLuasPersegiPanjang.setForeground(new java.awt.Color(0, 0, 0));
-        btnLuasPersegiPanjang.setText("Luas");
-        btnLuasPersegiPanjang.addActionListener(new java.awt.event.ActionListener() {
+        btnHitungPersegiPanjang.setBackground(new java.awt.Color(0, 204, 204));
+        btnHitungPersegiPanjang.setForeground(new java.awt.Color(0, 0, 0));
+        btnHitungPersegiPanjang.setText("Hitung persegi panjang");
+        btnHitungPersegiPanjang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLuasPersegiPanjangActionPerformed(evt);
+                btnHitungPersegiPanjangActionPerformed(evt);
             }
         });
 
-        btnKelilingPersegiPanjang.setBackground(new java.awt.Color(0, 204, 204));
-        btnKelilingPersegiPanjang.setForeground(new java.awt.Color(0, 0, 0));
-        btnKelilingPersegiPanjang.setText("Keliling");
-        btnKelilingPersegiPanjang.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnKelilingPersegiPanjangActionPerformed(evt);
-            }
-        });
-
+        jLabel7.setForeground(new java.awt.Color(255, 102, 51));
         jLabel7.setText("Lingkaran");
 
         jLabel8.setText("Jari-jari");
 
-        jLabel9.setText("Pilih hitung Luas atau Keliling");
+        jLabel9.setText("Hitung Luas dan Keliling");
 
-        btnLuasLingkaran.setBackground(new java.awt.Color(0, 204, 204));
-        btnLuasLingkaran.setForeground(new java.awt.Color(0, 0, 0));
-        btnLuasLingkaran.setText("Luas");
-        btnLuasLingkaran.addActionListener(new java.awt.event.ActionListener() {
+        btnHitungLingkaran.setBackground(new java.awt.Color(0, 204, 204));
+        btnHitungLingkaran.setForeground(new java.awt.Color(0, 0, 0));
+        btnHitungLingkaran.setText("Hitung Lingkaran");
+        btnHitungLingkaran.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLuasLingkaranActionPerformed(evt);
+                btnHitungLingkaranActionPerformed(evt);
             }
         });
 
-        btnKelilingLingkaran.setBackground(new java.awt.Color(0, 204, 204));
-        btnKelilingLingkaran.setForeground(new java.awt.Color(0, 0, 0));
-        btnKelilingLingkaran.setText("Keliling");
-        btnKelilingLingkaran.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnKelilingLingkaranActionPerformed(evt);
-            }
-        });
+        jLabel10.setText("Hasil Luas");
 
-        jLabel10.setText("Hasil");
-
-        txtHasilLingkaran.setForeground(new java.awt.Color(0, 0, 0));
-        txtHasilLingkaran.addActionListener(new java.awt.event.ActionListener() {
+        txtHasilLuasLingkaran.setForeground(new java.awt.Color(0, 0, 0));
+        txtHasilLuasLingkaran.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtHasilLingkaranActionPerformed(evt);
+                txtHasilLuasLingkaranActionPerformed(evt);
             }
         });
 
         jLabel11.setText("Chose phi");
 
+        jLabel12.setForeground(new java.awt.Color(255, 102, 51));
         jLabel12.setText("Segitiga");
 
         jLabel13.setText("Alas");
@@ -157,121 +146,150 @@ public class calculatorBagunDatar extends javax.swing.JFrame {
 
         txtHasilSegitiga.setForeground(new java.awt.Color(0, 0, 0));
 
+        jLabel17.setForeground(new java.awt.Color(255, 102, 51));
         jLabel17.setText("Persegi");
 
         jLabel18.setText("Sisi");
 
-        jLabel20.setText("Pilih hitung Luas atau Keliling");
+        jLabel20.setText("Hitung Luas dan Keliling");
 
-        btnLuasPersegi.setBackground(new java.awt.Color(0, 204, 204));
-        btnLuasPersegi.setForeground(new java.awt.Color(0, 0, 0));
-        btnLuasPersegi.setText("Luas");
-        btnLuasPersegi.addActionListener(new java.awt.event.ActionListener() {
+        btnHitungPersegi.setBackground(new java.awt.Color(0, 204, 204));
+        btnHitungPersegi.setForeground(new java.awt.Color(0, 0, 0));
+        btnHitungPersegi.setText("Hitung persegi");
+        btnHitungPersegi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLuasPersegiActionPerformed(evt);
+                btnHitungPersegiActionPerformed(evt);
             }
         });
 
-        btnKelilingPersegi.setBackground(new java.awt.Color(0, 204, 204));
-        btnKelilingPersegi.setForeground(new java.awt.Color(0, 0, 0));
-        btnKelilingPersegi.setText("Keliling");
-        btnKelilingPersegi.addActionListener(new java.awt.event.ActionListener() {
+        jLabel21.setText("Hasil Luas");
+
+        txtHasilLuasPersegi.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel15.setText("Hasil Keliling");
+
+        txtHasilKelilingPersegipanjang1.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel19.setText("Hasil Keliling");
+
+        txtHasilKelilingLingkaran.setForeground(new java.awt.Color(0, 0, 0));
+        txtHasilKelilingLingkaran.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnKelilingPersegiActionPerformed(evt);
+                txtHasilKelilingLingkaranActionPerformed(evt);
             }
         });
 
-        jLabel21.setText("Hasil");
+        jLabel22.setText("Hasil Keliling");
 
-        txtHasilPersegi.setForeground(new java.awt.Color(0, 0, 0));
+        txtHasilKelilingPersegi.setForeground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(90, 90, 90))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnLuasPersegiPanjang)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnKelilingPersegiPanjang))
-                    .addGroup(layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtInputPanjangPersegiPanjang1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(txtInputLebarPersegiPanjang2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtHasilPersegipanjang, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel4)))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel17)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel15)
+                                    .addComponent(jLabel6))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtInputSisi, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel21)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtHasilPersegi, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(btnLuasPersegi)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(btnKelilingPersegi)))
-                    .addComponent(jLabel20))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtHasilLuasPersegipanjang, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
+                                    .addComponent(txtHasilKelilingPersegipanjang1)))
+                            .addComponent(btnHitungPersegiPanjang)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtInputPanjangPersegiPanjang1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel2))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(txtInputLebarPersegiPanjang2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addGap(60, 60, 60)
+                                    .addComponent(jLabel17))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(3, 3, 3)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel21)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(jLabel22)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(txtHasilKelilingPersegi, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addComponent(jLabel4))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(txtHasilLuasPersegi, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(jLabel18)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(txtInputSisi, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addGap(6, 6, 6)
+                                    .addComponent(jLabel20)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(17, 17, 17)
+                                .addComponent(btnHitungPersegi))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(jLabel5)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addGap(103, 103, 103))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(22, 22, 22)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel9)
+                                    .addComponent(btnHitungLingkaran)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel8)
-                                    .addComponent(jLabel7)
                                     .addComponent(txtJariJari, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtPhi, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel11))))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(btnLuasLingkaran)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(btnKelilingLingkaran)
-                            .addGap(6, 6, 6)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtHasilLingkaran, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel12)
-                    .addComponent(btnLuasSegitiga)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addComponent(jLabel16)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtHasilSegitiga))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel13)
-                                .addComponent(jLabel14))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtTinggi)
-                                .addComponent(txtAlas, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap())
+                                    .addComponent(jLabel11)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel19)
+                                    .addComponent(jLabel10))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtHasilLuasLingkaran, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                                    .addComponent(txtHasilKelilingLingkaran)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(jLabel16)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txtHasilSegitiga))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel13)
+                                        .addComponent(jLabel14))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel12)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(txtTinggi)
+                                            .addComponent(txtAlas, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(btnLuasSegitiga)))
+                        .addGap(46, 46, 46))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(95, 95, 95)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -284,33 +302,22 @@ public class calculatorBagunDatar extends javax.swing.JFrame {
                     .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(22, 22, 22)
-                                .addComponent(txtInputPanjangPersegiPanjang1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(btnLuasPersegiPanjang)
-                                    .addComponent(btnKelilingPersegiPanjang))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(txtHasilPersegipanjang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel6))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(btnLuasPersegi)
-                                .addComponent(btnKelilingPersegi))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(39, 39, 39)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel21)
-                                    .addComponent(txtHasilPersegi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(129, 129, 129))
+                        .addGap(22, 22, 22)
+                        .addComponent(txtInputPanjangPersegiPanjang1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnHitungPersegiPanjang)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtHasilLuasPersegipanjang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtHasilKelilingPersegipanjang1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel15)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -328,92 +335,90 @@ public class calculatorBagunDatar extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnLuasLingkaran)
-                            .addComponent(btnKelilingLingkaran))
+                        .addComponent(btnHitungLingkaran)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel10)
-                            .addComponent(txtHasilLingkaran, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(46, 46, 46)
+                            .addComponent(txtHasilLuasLingkaran, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(17, 17, 17)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel17)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel18)
-                                    .addComponent(txtInputSisi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(14, 14, 14)
-                                .addComponent(jLabel20))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel12)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel13)
-                                    .addComponent(txtAlas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(txtTinggi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel14))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnLuasSegitiga)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel16)
-                                    .addComponent(txtHasilSegitiga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap(127, Short.MAX_VALUE))))
+                            .addComponent(jLabel19)
+                            .addComponent(txtHasilKelilingLingkaran, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel17)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel18)
+                            .addComponent(txtInputSisi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel20)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnHitungPersegi)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel21)
+                            .addComponent(txtHasilLuasPersegi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel13)
+                            .addComponent(txtAlas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtTinggi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel14))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnLuasSegitiga)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel16)
+                            .addComponent(txtHasilSegitiga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel22)
+                    .addComponent(txtHasilKelilingPersegi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(120, 120, 120))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnLuasPersegiPanjangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLuasPersegiPanjangActionPerformed
+    private void btnHitungPersegiPanjangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHitungPersegiPanjangActionPerformed
         // TODO add your handling code here:
         nilai1 = Double.parseDouble(txtInputPanjangPersegiPanjang1.getText());
         nilai2 = Double.parseDouble(txtInputLebarPersegiPanjang2.getText());
-        hasil = nilai1 * nilai2;
-        txtHasilPersegipanjang.setText(String.valueOf(hasil));
-    }//GEN-LAST:event_btnLuasPersegiPanjangActionPerformed
+//        Luas
+        luas = nilai1 * nilai2;
+        txtHasilLuasPersegipanjang.setText(String.valueOf(luas));
+//        keliling
+        keliling = 2 * (nilai1 + nilai2);
+        txtHasilKelilingPersegipanjang1.setText(String.valueOf(keliling));
+    }//GEN-LAST:event_btnHitungPersegiPanjangActionPerformed
 
-    private void btnKelilingPersegiPanjangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKelilingPersegiPanjangActionPerformed
-        // TODO add your handling code here:
-        nilai1 = Double.parseDouble(txtInputPanjangPersegiPanjang1.getText());
-        nilai2 = Double.parseDouble(txtInputLebarPersegiPanjang2.getText());
-        hasil = 2 * (nilai1 + nilai2);
-        txtHasilPersegipanjang.setText(String.valueOf(hasil));
-    }//GEN-LAST:event_btnKelilingPersegiPanjangActionPerformed
-
-    private void btnLuasLingkaranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLuasLingkaranActionPerformed
+    private void btnHitungLingkaranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHitungLingkaranActionPerformed
         // TODO add your handling code here:
         lingkaran = Double.parseDouble(txtJariJari.getText());
         Double phi = Double.parseDouble(txtPhi.getText());
         // Periksa apakah phi adalah 3.14 atau 22/7 (dengan pendekatan toleransi)
-        if (Math.abs(phi - 3.14) < 0.0001) { // Perbandingan double dengan toleransi
-            hasil = 3.14 * Math.pow(lingkaran, 2); // Menghitung luas lingkaran dengan phi 3.14
-            txtHasilLingkaran.setText(String.valueOf(hasil)); // Menampilkan hasil ke text field
-        } else if (Math.abs(phi - 22/7) < 0.0001) {
-            hasil = 3.14 * Math.pow(lingkaran, 2); // Menghitung luas lingkaran dengan phi 22/7
-            txtHasilLingkaran.setText(String.valueOf(hasil));
+        if (Math.abs(phi - 3.14) < 0.0001) { // Perbandingan double dengan toleransi digunakan untuk menghindari kesalahan perbandingan antara bilangan desimal dengan tipe double.
+//            math pow untuk menghitung pangkat
+            luas = 3.14 * Math.pow(lingkaran, 2); // Menghitung luas lingkaran dengan phi 3.14
+            txtHasilLuasLingkaran.setText(String.valueOf(luas)); // Menampilkan hasil ke text field
+            keliling = 2 * 3.14 * lingkaran; // Menghitung keliling lingkaran dengan phi 3.14
+            txtHasilKelilingLingkaran.setText(String.valueOf(keliling)); // Menampilkan hasil ke text field
+        } else if (Math.abs(phi - 22.0 / 7) < 0.0001) { // digunakan untuk menghindari kesalahan perbandingan antara bilangan desimal dengan tipe double.
+//            math pow untuk menghitung pangkat
+            luas = 3.14 * Math.pow(lingkaran, 2); // Menghitung luas lingkaran dengan phi 22/7
+            txtHasilLuasLingkaran.setText(String.valueOf(luas));
+            keliling = 2 * 3.14 * lingkaran; // Menghitung keliling lingkaran dengan phi 3.14
+            txtHasilKelilingLingkaran.setText(String.valueOf(keliling)); // Menampilkan hasil ke text field
         } else {
             System.out.println("Phi tidak ditemukan"); // Jika phi tidak valid
         }
-    }//GEN-LAST:event_btnLuasLingkaranActionPerformed
-
-    private void btnKelilingLingkaranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKelilingLingkaranActionPerformed
-        // TODO add your handling code here:
-        lingkaran = Double.parseDouble(txtJariJari.getText());
-        Double phi = Double.parseDouble(txtPhi.getText());
-        // Periksa apakah phi adalah 3.14 atau 22/7 (dengan pendekatan toleransi)
-        if (Math.abs(phi - 3.14) < 0.0001) { // Perbandingan double dengan toleransi
-            hasil = 2 * 3.14 * lingkaran; // Menghitung keliling lingkaran dengan phi 3.14
-            txtHasilLingkaran.setText(String.valueOf(hasil)); // Menampilkan hasil ke text field
-        } else if (Math.abs(phi - 22/7) < 0.0001) {
-            hasil = 2 * 3.14 * lingkaran; // Menghitung keliling lingkaran dengan phi 22/7
-            txtHasilLingkaran.setText(String.valueOf(hasil));
-        } else {
-            System.out.println("Phi tidak ditemukan"); // Jika phi tidak valid
-        }
-    }//GEN-LAST:event_btnKelilingLingkaranActionPerformed
+    }//GEN-LAST:event_btnHitungLingkaranActionPerformed
 
     private void btnLuasSegitigaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLuasSegitigaActionPerformed
         // TODO add your handling code here:
@@ -423,23 +428,25 @@ public class calculatorBagunDatar extends javax.swing.JFrame {
         txtHasilSegitiga.setText(String.valueOf(hasil));
     }//GEN-LAST:event_btnLuasSegitigaActionPerformed
 
-    private void btnLuasPersegiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLuasPersegiActionPerformed
+    private void btnHitungPersegiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHitungPersegiActionPerformed
         // TODO add your handling code here:
+//        luas
         sisi = Double.parseDouble(txtInputSisi.getText());
-        hasil = sisi * sisi;
-        txtHasilPersegi.setText(String.valueOf(hasil));
-    }//GEN-LAST:event_btnLuasPersegiActionPerformed
-
-    private void btnKelilingPersegiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKelilingPersegiActionPerformed
-        // TODO add your handling code here:
+        luas = sisi * sisi;
+        txtHasilLuasPersegi.setText(String.valueOf(luas));
+//        keliling
         sisi = Double.parseDouble(txtInputSisi.getText());
-        hasil = sisi * sisi * sisi * sisi;
-        txtHasilPersegi.setText(String.valueOf(hasil));
-    }//GEN-LAST:event_btnKelilingPersegiActionPerformed
+        keliling = sisi * sisi * sisi * sisi;
+        txtHasilKelilingPersegi.setText(String.valueOf(keliling));
+    }//GEN-LAST:event_btnHitungPersegiActionPerformed
 
-    private void txtHasilLingkaranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHasilLingkaranActionPerformed
+    private void txtHasilLuasLingkaranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHasilLuasLingkaranActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtHasilLingkaranActionPerformed
+    }//GEN-LAST:event_txtHasilLuasLingkaranActionPerformed
+
+    private void txtHasilKelilingLingkaranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHasilKelilingLingkaranActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtHasilKelilingLingkaranActionPerformed
 
     /**
      * @param args the command line arguments
@@ -477,12 +484,9 @@ public class calculatorBagunDatar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnKelilingLingkaran;
-    private javax.swing.JButton btnKelilingPersegi;
-    private javax.swing.JButton btnKelilingPersegiPanjang;
-    private javax.swing.JButton btnLuasLingkaran;
-    private javax.swing.JButton btnLuasPersegi;
-    private javax.swing.JButton btnLuasPersegiPanjang;
+    private javax.swing.JButton btnHitungLingkaran;
+    private javax.swing.JButton btnHitungPersegi;
+    private javax.swing.JButton btnHitungPersegiPanjang;
     private javax.swing.JButton btnLuasSegitiga;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -490,12 +494,15 @@ public class calculatorBagunDatar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -504,9 +511,12 @@ public class calculatorBagunDatar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField txtAlas;
-    private javax.swing.JTextField txtHasilLingkaran;
-    private javax.swing.JTextField txtHasilPersegi;
-    private javax.swing.JTextField txtHasilPersegipanjang;
+    private javax.swing.JTextField txtHasilKelilingLingkaran;
+    private javax.swing.JTextField txtHasilKelilingPersegi;
+    private javax.swing.JTextField txtHasilKelilingPersegipanjang1;
+    private javax.swing.JTextField txtHasilLuasLingkaran;
+    private javax.swing.JTextField txtHasilLuasPersegi;
+    private javax.swing.JTextField txtHasilLuasPersegipanjang;
     private javax.swing.JTextField txtHasilSegitiga;
     private javax.swing.JTextField txtInputLebarPersegiPanjang2;
     private javax.swing.JTextField txtInputPanjangPersegiPanjang1;
